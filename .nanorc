@@ -1,0 +1,4 @@
+set linenumbers
+set autoindent
+set softwrap
+include /usr/share/nano/*.nanorc
