@@ -4,6 +4,7 @@ d = !(git diff --name-only --diff-filter=d | xargs bat --diff)
 r = !(git branch | grep -v \\* | xargs git branch -D)
 s = status --short
 toma = commit -a -m
+calma = commit -p -m
 [user]
 	email = pretogildo@gmail.com
 	name = Agnaldo Brito Junior
