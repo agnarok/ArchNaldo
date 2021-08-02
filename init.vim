@@ -9,13 +9,14 @@ Plug 'agude/vim-eldar'
 Plug '~/ArchNaldo/vim-plugs'
 call plug#end()
 
-" Colorscheme
+" ---------- Colorscheme ----------
 set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 syntax enable
 colorscheme mycolor 
+" ---------- Colorscheme ----------
 
-" Mappings
+" ---------- Mappings ----------
 " Move to previous/next
 nnoremap <silent>    <A-,> :BufferPrevious<CR>
 nnoremap <silent>    <A-.> :BufferNext<CR>
@@ -34,5 +35,14 @@ nnoremap <silent>    <A-8> :BufferGoto 8<CR>
 nnoremap <silent>    <A-9> :BufferLast<CR>
 " Close buffer
 nnoremap <silent>    <A-c> :BufferClose<CR>
+" ---------- Mappings ----------
 
+" ---------- Settings ----------
+set hidden
+set mouse=a
+highlight EndOfBuffer ctermfg=black ctermbg=black
 
+" ---------- Settings ----------	
+
+" ---------- Functions -----------
+" ---------- Functions ----------
