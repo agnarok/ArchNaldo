@@ -1,6 +1,6 @@
 	" Pluggins
 call plug#begin()
-
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 Plug 'jacoborus/tender.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'kyazdani42/nvim-web-devicons'
@@ -35,6 +35,8 @@ nnoremap <silent>    <A-8> :BufferGoto 8<CR>
 nnoremap <silent>    <A-9> :BufferLast<CR>
 " Close buffer
 nnoremap <silent>    <A-c> :BufferClose<CR>
+" Toggle File Tree
+nnoremap <Space><Tab> <cmd>CHADopen<cr>
 " ---------- Mappings ----------
 
 " ---------- Settings ----------
@@ -43,8 +45,10 @@ set hidden
 set mouse=a
 "Removes the funcking '~'
 set fillchars=vert:\│,eob:\  
-
 " ---------- Settings ----------	
 
-" ---------- Functions -----------
-" ---------- Functions ----------
+" ---------- On Startup -----------
+" Start CHADTree. If a file is specified, move the cursor to its window.
+autocmd VimEnter * if !argc() | CHADopen 
+
+" ---------- On Startup -----------
