@@ -38,9 +38,11 @@ nnoremap <silent>    <A-c> :BufferClose<CR>
 " ---------- Mappings ----------
 
 " ---------- Settings ----------
+"  Necessary to user buffer properly
 set hidden
 set mouse=a
-highlight EndOfBuffer ctermfg=black ctermbg=black
+"Removes the funcking '~'
+set fillchars=vert:\│,eob:\  
 
 " ---------- Settings ----------	
 
