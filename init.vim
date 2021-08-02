@@ -6,6 +6,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 Plug 'agude/vim-eldar'
+Plug 'mhinz/vim-startify'
 Plug '~/ArchNaldo/vim-plugs'
 call plug#end()
 
