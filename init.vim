@@ -1,11 +1,11 @@
-	" Pluggins
+" My leader is space!
+let mapleader=" "
+
+" Pluggins
 call plug#begin()
-Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
-Plug 'jacoborus/tender.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'romgrk/barbar.nvim'
-Plug 'agude/vim-eldar'
 Plug 'mhinz/vim-startify'
 Plug '~/ArchNaldo/vim-plugs'
 call plug#end()
@@ -19,37 +19,70 @@ colorscheme mycolor
 
 " ---------- Mappings ----------
 " Move to previous/next
-nnoremap <silent>    <A-,> :BufferPrevious<CR>
-nnoremap <silent>    <A-.> :BufferNext<CR>
+nnoremap <silent>    <A-left> :BufferPrevious<space>
+nnoremap <silent>    <A-right> :BufferNext<space>
 " Re-order to previous/next
-nnoremap <silent>    <A-<> :BufferMovePrevious<CR>
-nnoremap <silent>    <A->> :BufferMoveNext<CR>
+nnoremap <silent>    <A-,> :BufferMovePrevious<space>
+nnoremap <silent>    <A-.> :BufferMoveNext<space>
 " Goto buffer in position...
-nnoremap <silent>    <A-1> :BufferGoto 1<CR>
-nnoremap <silent>    <A-2> :BufferGoto 2<CR>
-nnoremap <silent>    <A-3> :BufferGoto 3<CR>
-	nnoremap <silent>    <A-4> :BufferGoto 4<CR>
-nnoremap <silent>    <A-5> :BufferGoto 5<CR>
-nnoremap <silent>    <A-6> :BufferGoto 6<CR>
-nnoremap <silent>    <A-7> :BufferGoto 7<CR>
-nnoremap <silent>    <A-8> :BufferGoto 8<CR>
-nnoremap <silent>    <A-9> :BufferLast<CR>
+nnoremap <silent>    <A-1> :BufferGoto 1<space>
+nnoremap <silent>    <A-2> :BufferGoto 2<space>
+nnoremap <silent>    <A-3> :BufferGoto 3<space>
+nnoremap <silent>    <A-4> :BufferGoto 4<space>
+nnoremap <silent>    <A-5> :BufferGoto 5<space>
+nnoremap <silent>    <A-6> :BufferGoto 6<space>
+nnoremap <silent>    <A-7> :BufferGoto 7<space>
+nnoremap <silent>    <A-8> :BufferGoto 8<space>
+nnoremap <silent>    <A-9> :BufferLast<space>
+"COC.NVIM
+nnoremap <silent><expr> <C-space> coc#refresh()
+" GoTo code navigation.
+nmap <silent> 	gd 	<Plug>(coc-definition)
+nmap <silent> 	gy 	<Plug>(coc-type-definition)
+nmap <silent> 	gi 	<Plug>(coc-implementation)
+nmap <silent> 	gr 	<Plug>(coc-references)
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 " Close buffer
-nnoremap <silent>    <A-c> :BufferClose<CR>
+nnoremap <silent>    <A-c> :BufferClose<space>
 " Toggle File Tree
-nnoremap <Space><Tab> <cmd>CHADopen<cr>
+nnoremap <silent>    <leader><tab> :NERDTreeToggle<space>
+" Save File
+nnoremap 	<leader>s 	:w<enter>
+" Close Window
+nnoremap 	<leader>q	:q<enter>
 " ---------- Mappings ----------
 
 " ---------- Settings ----------
 "  Necessary to user buffer properly
+set encoding=utf-8
+set number 
 set hidden
 set mouse=a
 "Removes the funcking '~'
 set fillchars=vert:\│,eob:\  
+set updatetime=300
+set nobackup
+set nowritebackup
+set cmdheight=2
+
 " ---------- Settings ----------	
 
 " ---------- On Startup -----------
-" Start CHADTree. If a file is specified, move the cursor to its window.
-autocmd VimEnter * if !argc() | CHADopen 
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight') 
+"---------- On Startup -----------
 
-" ---------- On Startup -----------
+" ---------- Functions ----------
+" Check back space COC function
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+" ---------- Functions ----------
