@@ -75,8 +75,8 @@ nnoremap <leader>q :q<enter>
 nnoremap <leader>f :Files<enter>
 nnoremap <leader>a :Files ~/<enter>
 nnoremap <Leader>h :History<enter>
-nnoremap <Leader>b :Buffers<enter>
-
+nnoremap <leader>b :Buffers<enter>
+nnoremap <leader>t :Ag<enter>
 " Mappings to move lines
 nnoremap <A-down> :m .+1<CR>==
 nnoremap <A-up> :m .-2<CR>==
