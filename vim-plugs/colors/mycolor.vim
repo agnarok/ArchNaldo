@@ -126,19 +126,19 @@ let  s:ColourAssignment['MoreMsg']       =  {'GUIFG':  s:green,  'CTERMFG':  'Gr
 
 " Visual aid
 " ----------
-let  s:ColourAssignment['MatchParen']  =  {'GUIBG':  s:cyan,      'CTERMBG':  'cyan'}
+let  s:ColourAssignment['MatchParen']  =  {'GUIBG':  s:gray,      'CTERMBG':  'Gray'}
 let  s:ColourAssignment['Visual']      =  {'GUIBG':  'DarkGrey'}
 highlight! link VisualNOS Visual
 let  s:ColourAssignment['NonText']     =  {'GUIFG':  s:blue,      'CTERMFG':  'blue'}
 
 let  s:ColourAssignment['Todo']        =  {'GUIFG':  'Black',     'GUIBG':    s:yellow,  'CTERMBG':  'yellow'}
-let  s:ColourAssignment['Underlined']  =  {'GUIFG':  s:cyan,      'CTERMFG':  'cyan',    'GUI':      'Underline'}
+let  s:ColourAssignment['Underlined']  =  {'GUIFG':  s:gray,      'CTERMFG':  'Gray',    'GUI':      'Underline'}
 let  s:ColourAssignment['EndOfBuffer'] =  {'GUIFG':  'Blue',     'CTERMFG':  'Blue'}
 let  s:ColourAssignment['Error']       =  {'GUIFG':  s:red,       'GUIBG':    'Black',   'CTERMFG':  'red',        'GUI':  'Reverse,Bold'}
 let  s:ColourAssignment['ErrorMsg']    =  {'GUIFG':  s:red,       'GUIBG':    'White',   'CTERMFG':  'red',        'GUI':  'Reverse,Bold'}
 let  s:ColourAssignment['WarningMsg']  =  {'GUIFG':  s:red,       'CTERMFG':  'red'}
 let  s:ColourAssignment['Ignore']      =  {'GUIFG':  'bg',        'CTERMFG':  'Black'}
-let  s:ColourAssignment['SpecialKey']  =  {'GUIFG':  s:cyan,      'CTERMFG':  'Cyan'}
+let  s:ColourAssignment['SpecialKey']  =  {'GUIFG':  s:gray,      'CTERMFG':  'Gray'}
 
 
 " Variable types
@@ -155,7 +155,7 @@ highlight! link Function Identifier
 
 " Comments
 " --------
-let  s:ColourAssignment['Comment']  =  {'GUIFG':  s:gray,  'CTERMFG':  'gray'}
+let  s:ColourAssignment['Comment']  =  {'GUIFG':  s:gray,  'CTERMFG':  'Gray'}
 highlight! link SpecialComment Special
 
 

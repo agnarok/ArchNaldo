@@ -12,6 +12,7 @@ Plug 'mhinz/vim-startify'
 Plug '~/ArchNaldo/vim-plugs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'preservim/nerdcommenter'
 call plug#end()
 
 " ---------- Colorscheme ----------
@@ -50,7 +51,7 @@ nmap <silent> 	gy 	<Plug>(coc-type-definition)
 nmap <silent> 	gi 	<Plug>(coc-implementation)
 nmap <silent> 	gr 	<Plug>(coc-references)
 nmap <silent> <Leader>r <Plug>(coc-rename)
-
+nnoremap <silent> <C-space> :call <SID>show_documentation()<CR>
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -97,7 +98,6 @@ set updatetime=300
 set nobackup
 set nowritebackup
 set cmdheight=2
-
 " ---------- Settings ----------	
 
 " ---------- On Startup -----------
@@ -111,4 +111,16 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+" Show documentation in preview popup
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
 " ---------- Functions ----------
