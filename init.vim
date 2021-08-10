@@ -103,6 +103,9 @@ set cmdheight=2
 " ---------- On Startup -----------
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight') 
+" Set correct root dir for python projects
+autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', 'setup.cfg', 'setup.py', 'pyproject.toml', 'pyrightconfig.json']
+
 "---------- On Startup -----------
 
 " ---------- Functions ----------
