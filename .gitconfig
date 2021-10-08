@@ -12,4 +12,7 @@ calma = commit -p -m
 	prune = true
 [core]
 	pager = bat
-	editor = nano
+	editor = nvim
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
