@@ -3,6 +3,7 @@ let mapleader=" "
 
 " Pluggins
 call plug#begin()
+Plug 'joshdick/onedark.vim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 Plug 'ryanoasis/vim-devicons'
@@ -61,7 +62,7 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Close buffer
-nnoremap <silent> <A-c>	:BufferClose<enter>
+nnoremap <silent> <C-w>	:BufferClose<enter>
 
 " Toggle File Tree
 nnoremap <silent> <leader><tab> :NERDTreeToggle<enter>
