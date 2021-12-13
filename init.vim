@@ -20,7 +20,7 @@ call plug#end()
 set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 syntax enable
-colorscheme mycolor 
+colorscheme onedark 
 " ---------- Colorscheme ----------
 
 " ---------- Mappings ----------
