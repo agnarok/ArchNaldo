@@ -92,6 +92,9 @@ nnoremap <esc> :noh<return><esc>
 " ---------- Mappings ----------
 
 " ---------- Settings ----------
+" Cursor settings
+set guicursor=
+
 "  Necessary to user buffer properly
 set encoding=utf-8
 set number 
