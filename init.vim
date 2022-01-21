@@ -3,6 +3,8 @@ let mapleader=" "
 
 " Pluggins
 call plug#begin()
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'joshdick/onedark.vim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 Plug 'ryanoasis/vim-devicons'
@@ -16,10 +18,12 @@ Plug 'preservim/nerdcommenter'
 call plug#end()
 
 " ---------- Colorscheme ----------
+syntax on
 set termguicolors
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-syntax enable
-colorscheme mycolor 
+set t_Co=256
+set background=dark
+colorscheme onedark
+highlight Normal guibg=black guifg=white
 " ---------- Colorscheme ----------
 
 " ---------- Mappings ----------
@@ -41,6 +45,10 @@ nnoremap <silent>    <A-6> :BufferGoto 6<enter>
 nnoremap <silent>    <A-7> :BufferGoto 7<enter>
 nnoremap <silent>    <A-8> :BufferGoto 8<enter>
 nnoremap <silent>    <A-9> :BufferLast<enter>
+
+" Open Current file in NERDTree
+nnoremap <silent>    <A-o> :NERDTreeFind<CR>
+
 
 "COC.NVIM
 nnoremap <silent><expr> <C-space> coc#refresh()
