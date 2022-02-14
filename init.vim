@@ -103,6 +103,10 @@ nnoremap <esc> :noh<return><esc>
 " Cursor settings
 set guicursor=
 
+" Smart case sensitive search
+set ignorecase
+set smartcase
+
 "  Necessary to user buffer properly
 set encoding=utf-8
 set number 
