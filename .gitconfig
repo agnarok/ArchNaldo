@@ -1,10 +1,11 @@
 [alias]
-lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold magenta)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all --date-order
-d = !(git diff --name-only --diff-filter=d | xargs bat --diff)
-r = !(git branch | grep -v \\* | xargs git branch -D)
-s = status --short
-toma = commit -a -m
-calma = commit -p -m
+  lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold magenta)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all --date-order
+  d = !(git diff --name-only --diff-filter=d | xargs bat --diff)
+  r = !(git branch | grep -v \\* | xargs git branch -D)
+  s = status --short
+  f = fetch
+  toma = commit -a -m
+  calma = commit -p -m
 [user]
 	email = pretogildo@gmail.com
 	name = Agnaldo Brito Junior
