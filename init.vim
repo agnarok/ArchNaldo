@@ -1,10 +1,17 @@
 " My leader is space!
 let mapleader=" "
 
-" Pluggins
+" ---------- Plugins ---------
+" Install Vim Plug if not installed
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Plugins
 call plug#begin()
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
-Plug 'joshdick/onedark.vim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 Plug 'ryanoasis/vim-devicons'
@@ -15,14 +22,16 @@ Plug '~/ArchNaldo/vim-plugs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
+Plug 'joshdick/onedark.vim'
 call plug#end()
+" ---------- Plugins ---------
 
 " ---------- Colorscheme ----------
 syntax on
+colorscheme onedark
 set termguicolors
 set t_Co=256
 set background=dark
-colorscheme onedark
 highlight Normal guibg=black guifg=white
 " ---------- Colorscheme ----------
 
