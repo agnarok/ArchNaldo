@@ -1,4 +1,4 @@
-" My leader is space!
+ "My leader is space!
 let mapleader=" "
 
 " ---------- Plugins ---------
@@ -11,10 +11,6 @@ endif
 
 " Plugins
 call plug#begin()
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'romgrk/barbar.nvim'
-Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mhinz/vim-startify'
@@ -22,23 +18,23 @@ Plug '~/ArchNaldo/vim-plugs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
-Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
 call plug#end()
 " ---------- Plugins ---------
 
 " ---------- Colorscheme ----------
-syntax on
-colorscheme onedark
-set termguicolors
-set t_Co=256
-set background=dark
-highlight Normal guibg=black guifg=white
+"syntax on
+colorscheme gruvbox
+"set termguicolors
+"set t_Co=256
+"set background=dark
+"highlight Normal guibg=black guifg=white
 " ---------- Colorscheme ----------
 
 " ---------- Mappings ----------
 " Move to previous/next
 nnoremap <silent>    <A-left> :BufferPrevious<enter>
-nnoremap <silent>    <A-right> :BufferNext<enter>
+nnoremap <silent>    <M-right> :BufferNext<enter>
 
 " Re-order to previous/next
 nnoremap <silent>    <A-,> :BufferMovePrevious<enter>
